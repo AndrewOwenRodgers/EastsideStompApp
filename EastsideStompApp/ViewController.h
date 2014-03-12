@@ -10,4 +10,11 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *stuffView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *stuffViewSegmentedControl;
+@property (strong, nonatomic) UIView *calenderView;
+@property (strong, nonatomic) UIView *socialView;
+@property (strong, nonatomic) UIView *classesView;
+@property (strong, nonatomic) UIView *directionsView;
+
 @end
