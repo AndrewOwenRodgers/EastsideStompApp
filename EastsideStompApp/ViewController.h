@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IDScrollableTabBar.h"
+#import "IDScrollableTabBarDelegate.h"
+#import "IDScrollableTabBarItem.h"
+#import <RNFrostedSidebar.h>
 
 @interface ViewController : UIViewController
+<IDScrollableTabBarDelegate, RNFrostedSidebarDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *stuffView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *stuffViewSegmentedControl;
-@property (strong, nonatomic) UIView *calenderView;
+@property (strong, nonatomic) UIView *calendarView;
 @property (strong, nonatomic) UIView *socialView;
 @property (strong, nonatomic) UIView *classesView;
 @property (strong, nonatomic) UIView *directionsView;

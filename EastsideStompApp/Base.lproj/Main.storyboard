@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A3028" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="YSw-bs-gLK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A3028" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YSw-bs-gLK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -8,35 +8,46 @@
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="myb-4j-lJo"/>
+                        <viewControllerLayoutGuide type="bottom" id="scU-sC-8qU"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="RQM-RZ-hzv">
-                                <rect key="frame" x="0.0" y="94" width="320" height="29"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGA-53-GiU">
+                                <rect key="frame" x="0.0" y="123" width="320" height="445"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Calendar"/>
-                                    <segment title="Classes"/>
-                                    <segment title="Descriptions"/>
-                                </segments>
-                            </segmentedControl>
-                            <view contentMode="scaleToFill" id="BGA-53-GiU">
-                                <rect key="frame" x="0.0" y="128" width="320" height="440"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.069036655550000006" green="0.17105280340000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="GqG-tL-nxK">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKJ-a9-eza">
+                                <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="MXd-n0-VmT"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBurger:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nEH-Kt-HuZ"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DKJ-a9-eza" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="8Nk-Jc-94q"/>
+                            <constraint firstItem="DKJ-a9-eza" firstAttribute="leading" secondItem="BGA-53-GiU" secondAttribute="leading" id="Y9a-ll-gFv"/>
+                            <constraint firstItem="BGA-53-GiU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="nc4-ZY-rz8"/>
+                            <constraint firstItem="BGA-53-GiU" firstAttribute="top" secondItem="myb-4j-lJo" secondAttribute="bottom" constant="103" id="vwv-93-aXg"/>
+                            <constraint firstItem="scU-sC-8qU" firstAttribute="top" secondItem="BGA-53-GiU" secondAttribute="bottom" id="vwx-n2-QIx"/>
+                            <constraint firstAttribute="trailing" secondItem="BGA-53-GiU" secondAttribute="trailing" id="ycp-Fu-TFY"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gwe-w0-11o"/>
                     <connections>
                         <outlet property="stuffView" destination="BGA-53-GiU" id="KZG-zJ-yph"/>
-                        <outlet property="stuffViewSegmentedControl" destination="RQM-RZ-hzv" id="dlx-6F-1IV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
