@@ -16,6 +16,7 @@
 <IDScrollableTabBarDelegate, RNFrostedSidebarDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *stuffView;
+@property (weak, nonatomic) IBOutlet UIImageView *background;
 @property (strong, nonatomic) UIView *calendarView;
 @property (strong, nonatomic) UIView *socialView;
 @property (strong, nonatomic) UIView *classesView;

@@ -16,13 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aao-vm-IH5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGA-53-GiU">
                                 <rect key="frame" x="0.0" y="123" width="320" height="445"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKJ-a9-eza">
-                                <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                                <rect key="frame" x="0.0" y="85" width="84" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="84" id="MXd-n0-VmT"/>
@@ -37,28 +41,34 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DKJ-a9-eza" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="8Nk-Jc-94q"/>
+                            <constraint firstItem="DKJ-a9-eza" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="85" id="8Nk-Jc-94q"/>
                             <constraint firstItem="DKJ-a9-eza" firstAttribute="leading" secondItem="BGA-53-GiU" secondAttribute="leading" id="Y9a-ll-gFv"/>
+                            <constraint firstItem="Aao-vm-IH5" firstAttribute="trailing" secondItem="BGA-53-GiU" secondAttribute="trailing" id="jyS-1t-WQB"/>
+                            <constraint firstItem="Aao-vm-IH5" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="kvT-us-rHg"/>
                             <constraint firstItem="BGA-53-GiU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="nc4-ZY-rz8"/>
+                            <constraint firstItem="Aao-vm-IH5" firstAttribute="bottom" secondItem="BGA-53-GiU" secondAttribute="bottom" id="nfp-xn-qXW"/>
                             <constraint firstItem="BGA-53-GiU" firstAttribute="top" secondItem="myb-4j-lJo" secondAttribute="bottom" constant="103" id="vwv-93-aXg"/>
                             <constraint firstItem="scU-sC-8qU" firstAttribute="top" secondItem="BGA-53-GiU" secondAttribute="bottom" id="vwx-n2-QIx"/>
                             <constraint firstAttribute="trailing" secondItem="BGA-53-GiU" secondAttribute="trailing" id="ycp-Fu-TFY"/>
+                            <constraint firstItem="Aao-vm-IH5" firstAttribute="leading" secondItem="BGA-53-GiU" secondAttribute="leading" id="zCJ-zp-ECY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gwe-w0-11o"/>
                     <connections>
+                        <outlet property="background" destination="Aao-vm-IH5" id="tmp-BK-qyN"/>
                         <outlet property="stuffView" destination="BGA-53-GiU" id="KZG-zJ-yph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="710" y="123"/>
+            <point key="canvasLocation" x="714" y="123"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Y1-YV-5sI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="YSw-bs-gLK" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="38j-ls-vtJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

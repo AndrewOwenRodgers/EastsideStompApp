@@ -11,6 +11,7 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) NSMutableIndexSet *optionIndices;
+@property (nonatomic, strong) NSArray *backgrounds;
 
 @end
 
@@ -19,6 +20,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	self.background.image = [UIImage imageNamed:@"bkg@2x.jpg"];
+	
 	self.optionIndices = [NSMutableIndexSet indexSetWithIndex:1];
 
 	self.calendarView = [[[NSBundle mainBundle] loadNibNamed:@"CalendarView" owner:self options:nil] objectAtIndex:0];
@@ -35,8 +38,9 @@
     IDItem *itemSettings = [[IDItem alloc] initWithImage:[UIImage imageNamed:@"settings"] text:@"settings"];
     IDItem *itemMusic = [[IDItem alloc] initWithImage:[UIImage imageNamed:@"music"] text:@"music"];
     IDItem *itemZip = [[IDItem alloc] initWithImage:[UIImage imageNamed:@"zip"] text:@"zip"];
-    IDScrollableTabBar *scrollableTabBar = [[IDScrollableTabBar alloc] initWithFrame:CGRectMake(0, 30, 320, 0) itemWidth:80 items:itemClock,itemCamera,itemMail,itemFave,itemGames,itemSettings,itemMusic,itemZip, nil];
+    IDScrollableTabBar *scrollableTabBar = [[IDScrollableTabBar alloc] initWithFrame:CGRectMake(0, -10, 320, 0) itemWidth:80 items:itemClock,itemCamera,itemMail,itemFave,itemGames,itemSettings,itemMusic,itemZip, nil];
     scrollableTabBar.delegate = self;
+	scrollableTabBar.alpha = 0.9;
     scrollableTabBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
     [scrollableTabBar setSelectedItem:0 animated:NO];
     [self.view addSubview:scrollableTabBar];
@@ -62,6 +66,10 @@
 	//    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images];
     callout.delegate = self;
 	//    callout.showFromRight = YES;
+	callout.view.layer.shadowColor = [UIColor blackColor].CGColor;
+	callout.view.layer.shadowOffset = CGSizeMake(0, 1);
+	callout.view.layer.shadowOpacity = 1;
+	callout.view.layer.shadowRadius = 15.0;
     [callout show];
 }
 
@@ -78,14 +86,17 @@
 	if ([selectedNumber integerValue] == 0)
 	{
 		[self.stuffView addSubview:self.calendarView];
+		self.background.image = [UIImage imageNamed:@"bkg@2x.jpg"];
 	}
 	else if ([selectedNumber integerValue] == 1)
 	{
 		[self.stuffView addSubview:self.classesView];
+		self.background.image = [UIImage imageNamed:@"bkg2@2x.jpg"];
 	}
 	else if ([selectedNumber integerValue] == 2)
 	{
 		[self.stuffView addSubview:self.directionsView];
+		self.background.image = [UIImage imageNamed:@"bkg3@2x.jpg"];
 	}
 }
 
@@ -97,6 +108,11 @@
 - (NSUInteger)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskAll;
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 @end
