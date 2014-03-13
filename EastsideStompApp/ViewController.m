@@ -47,28 +47,6 @@
     [super didReceiveMemoryWarning];
 }
 
--(void)changeStuffView
-{
-	NSArray *subviews = self.stuffView.subviews;
-	for (UIView *subview in subviews)
-	{
-		[subview removeFromSuperview];
-	}
-	
-	if ([self.stuffViewSegmentedControl selectedSegmentIndex] == 0)
-	{
-		[self.stuffView addSubview:self.calendarView];
-	}
-	else if ([self.stuffViewSegmentedControl selectedSegmentIndex] == 1)
-	{
-		[self.stuffView addSubview:self.classesView];
-	}
-	else if ([self.stuffViewSegmentedControl selectedSegmentIndex] == 2)
-	{
-		[self.stuffView addSubview:self.directionsView];
-	}
-}
-
 #pragma mark -Slide View Stuff
 
 
@@ -91,7 +69,24 @@
 
 -(void)scrollTabBarAction : (NSNumber *)selectedNumber sender:(id)sender
 {
-    NSLog(@"selectedNumber - %@", selectedNumber);
+	NSArray *subviews = self.stuffView.subviews;
+	for (UIView *subview in subviews)
+	{
+		[subview removeFromSuperview];
+	}
+	
+	if ([selectedNumber integerValue] == 0)
+	{
+		[self.stuffView addSubview:self.calendarView];
+	}
+	else if ([selectedNumber integerValue] == 1)
+	{
+		[self.stuffView addSubview:self.classesView];
+	}
+	else if ([selectedNumber integerValue] == 2)
+	{
+		[self.stuffView addSubview:self.directionsView];
+	}
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
