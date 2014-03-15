@@ -76,61 +76,61 @@
 
 -(void)scrollTabBarAction : (NSNumber *)selectedNumber sender:(id)sender
 {
-	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationBeginsFromCurrentState:NO];
-	[UIView setAnimationDuration:(CGFloat)0.2];
-	
-	self.stuffView.alpha = 0.1;
-	self.background.alpha = 0.1;
-	
-	[UIView commitAnimations];
-	
-	NSArray *subviews = self.stuffView.subviews;
-	for (UIView *subview in subviews)
-	{
-		[subview removeFromSuperview];
-	}
-	
-	if ([selectedNumber integerValue] == 0)
-	{
-		[UIView beginAnimations:nil context:NULL];
-		[UIView setAnimationBeginsFromCurrentState:NO];
-		[UIView setAnimationDuration:(CGFloat)0.2];
-		
-		[self.stuffView addSubview:self.calendarView];
-		self.background.image = [UIImage imageNamed:@"bkg@2x.jpg"];
-		self.stuffView.alpha = 1.0;
-		self.background.alpha = 1.0;
-		
-		[UIView commitAnimations];
-	}
-	else if ([selectedNumber integerValue] == 1)
-	{
-		
-		[UIView beginAnimations:nil context:NULL];
-		[UIView setAnimationBeginsFromCurrentState:NO];
-		[UIView setAnimationDuration:(CGFloat)0.2];
-		
-		[self.stuffView addSubview:self.classesView];
-		self.background.image = [UIImage imageNamed:@"bkg2@2x.jpg"];
-		self.stuffView.alpha = 1.0;
-		self.background.alpha = 1.0;
-		
-		[UIView commitAnimations];
-	}
-	else if ([selectedNumber integerValue] == 2)
-	{
-		[UIView beginAnimations:nil context:NULL];
-		[UIView setAnimationBeginsFromCurrentState:NO];
-		[UIView setAnimationDuration:(CGFloat)0.2];
-		
-		[self.stuffView addSubview:self.directionsView];
-		self.background.image = [UIImage imageNamed:@"bkg3@2x.jpg"];
-		self.stuffView.alpha = 1.0;
-		self.background.alpha = 1.0;
-		
-		[UIView commitAnimations];
-	}
+	[UIView animateWithDuration:0.1
+                     animations:
+		^{
+			self.stuffView.alpha = 0.2;
+			self.background.alpha = 0.2;;
+		}
+                     completion:^(BOOL finished)
+		{
+			NSArray *subviews = self.stuffView.subviews;
+			for (UIView *subview in subviews)
+			{
+				[subview removeFromSuperview];
+			}
+			if ([selectedNumber integerValue] == 0)
+			{
+				[UIView beginAnimations:nil context:NULL];
+				[UIView setAnimationBeginsFromCurrentState:NO];
+				[UIView setAnimationDuration:(CGFloat)0.15];
+				
+				[self.stuffView addSubview:self.calendarView];
+				self.background.image = [UIImage imageNamed:@"bkg@2x.jpg"];
+				self.stuffView.alpha = 1.0;
+				self.background.alpha = 1.0;
+				
+				[UIView commitAnimations];
+			}
+			else if ([selectedNumber integerValue] == 1)
+			{
+				
+				[UIView beginAnimations:nil context:NULL];
+				[UIView setAnimationBeginsFromCurrentState:NO];
+				[UIView setAnimationDuration:(CGFloat)0.15];
+				
+				[self.stuffView addSubview:self.classesView];
+				self.background.image = [UIImage imageNamed:@"bkg2@2x.jpg"];
+				self.stuffView.alpha = 1.0;
+				self.background.alpha = 1.0;
+				
+				[UIView commitAnimations];
+			}
+			else if ([selectedNumber integerValue] == 2)
+			{
+				[UIView beginAnimations:nil context:NULL];
+				[UIView setAnimationBeginsFromCurrentState:NO];
+				[UIView setAnimationDuration:(CGFloat)0.15];
+				
+				[self.stuffView addSubview:self.directionsView];
+				self.background.image = [UIImage imageNamed:@"bkg3@2x.jpg"];
+				self.stuffView.alpha = 1.0;
+				self.background.alpha = 1.0;
+				
+				[UIView commitAnimations];
+			}
+		}
+	];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
