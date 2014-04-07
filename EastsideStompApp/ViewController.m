@@ -11,6 +11,7 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) NSMutableIndexSet *optionIndices;
+@property (nonatomic, strong) UITableView *twitterAndFaceBookTable;
 
 @end
 
@@ -43,6 +44,8 @@
     scrollableTabBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
     [scrollableTabBar setSelectedItem:0 animated:NO];
     [self.view addSubview:scrollableTabBar];
+	self.twitterAndFaceBookTable.delegate = self;
+	self.twitterAndFaceBookTable.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,8 +61,8 @@
                         [UIImage imageNamed:@"defaultCenter"]
                         ];
     NSArray *colors = @[
-                        [UIColor colorWithRed:240/255.f green:159/255.f blue:254/255.f alpha:1]
-                        ];
+						[UIColor colorWithRed:240/255.f green:159/255.f blue:254/255.f alpha:1]
+						];
     
     RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images selectedIndices:self.optionIndices borderColors:colors];
 	//    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images];
@@ -69,6 +72,7 @@
 	callout.view.layer.shadowOffset = CGSizeMake(0, 1);
 	callout.view.layer.shadowOpacity = 1;
 	callout.view.layer.shadowRadius = 15.0;
+	
     [callout show];
 }
 
@@ -80,7 +84,7 @@
                      animations:
 		^{
 			self.stuffView.alpha = 0.2;
-			self.background.alpha = 0.2;;
+			self.background.alpha = 0.2;
 		}
                      completion:^(BOOL finished)
 		{
@@ -146,6 +150,20 @@
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+#pragma mark -Twitter and FaceBook stuff
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	UITableViewCell *twitterCell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
+    
+    return twitterCell;
 }
 
 @end

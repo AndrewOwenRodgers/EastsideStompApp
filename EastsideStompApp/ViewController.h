@@ -13,7 +13,7 @@
 #import <RNFrostedSidebar.h>
 
 @interface ViewController : UIViewController
-<IDScrollableTabBarDelegate, RNFrostedSidebarDelegate>
+<IDScrollableTabBarDelegate, RNFrostedSidebarDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *stuffView;
 @property (weak, nonatomic) IBOutlet UIImageView *background;
