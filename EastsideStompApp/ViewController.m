@@ -168,7 +168,7 @@
 
 #pragma mark -HTTP requests
 
--(NSDictionary *)httpRequestWithURL:(NSURL*)url
+-(NSDictionary *)httpRequestWithURL:(NSString*)url
 {
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setHTTPMethod:@"GET"];
