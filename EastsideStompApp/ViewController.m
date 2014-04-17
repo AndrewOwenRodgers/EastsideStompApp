@@ -170,6 +170,7 @@
 
 -(NSDictionary *)httpRequestWithURL:(NSString*)url
 {
+	NSDictionary *responseDictionary = [[NSDictionary alloc] init];
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setHTTPMethod:@"GET"];
     [request setURL:[NSURL URLWithString:url]];
@@ -177,7 +178,7 @@
     NSError *error = [[NSError alloc] init];
     NSHTTPURLResponse *responseCode = nil;
 	
-    NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
 	
     if([responseCode statusCode] != 200)
 	{
@@ -185,7 +186,12 @@
         return nil;
     }
 	
-	return [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
+	else
+	{
+		responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+	}
+	
+	return responseDictionary;
 }
 
 @end
