@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSMutableIndexSet *optionIndices;
 @property (nonatomic, strong) UITableView *twitterAndFaceBookTable;
+@property (nonatomic, strong) NSMutableArray *eventsList;
 
 @end
 
@@ -196,6 +197,7 @@
 
 -(void)buildCalendarFromDictionary:(NSDictionary *)calendarDictionary
 {
+	self.eventsList = [calendarDictionary objectForKey:@"items"];
 	
 }
 
