@@ -25,6 +25,8 @@
 		0744821E18D7F49300D6D745 /* twitterAndFaceBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0744821D18D7F49300D6D745 /* twitterAndFaceBookCell.m */; };
 		076478EF18D2454A00C54471 /* bkg2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 076478ED18D2454A00C54471 /* bkg2@2x.jpg */; };
 		076478F018D2454A00C54471 /* bkg3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 076478EE18D2454A00C54471 /* bkg3@2x.jpg */; };
+		0793C3CC19059F6600C86F4A /* CalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0793C3CB19059F6600C86F4A /* CalendarCell.xib */; };
+		0793C3CF19059F9800C86F4A /* CalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0793C3CE19059F9800C86F4A /* CalendarCell.m */; };
 		07A6473018D0E4DF009AD841 /* IDScrollableTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6472C18D0E4DF009AD841 /* IDScrollableTabBar.m */; };
 		07A6473118D0E4DF009AD841 /* IDScrollableTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6472F18D0E4DF009AD841 /* IDScrollableTabBarItem.m */; };
 		07A6473F18D0E73D009AD841 /* defaultArch.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A6473318D0E73D009AD841 /* defaultArch.png */; };
@@ -82,6 +84,9 @@
 		0744821D18D7F49300D6D745 /* twitterAndFaceBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = twitterAndFaceBookCell.m; sourceTree = "<group>"; };
 		076478ED18D2454A00C54471 /* bkg2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "bkg2@2x.jpg"; path = "../bkg2@2x.jpg"; sourceTree = "<group>"; };
 		076478EE18D2454A00C54471 /* bkg3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "bkg3@2x.jpg"; path = "../bkg3@2x.jpg"; sourceTree = "<group>"; };
+		0793C3CB19059F6600C86F4A /* CalendarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarCell.xib; sourceTree = "<group>"; };
+		0793C3CD19059F9800C86F4A /* CalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarCell.h; sourceTree = "<group>"; };
+		0793C3CE19059F9800C86F4A /* CalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarCell.m; sourceTree = "<group>"; };
 		07A6472B18D0E4DF009AD841 /* IDScrollableTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDScrollableTabBar.h; sourceTree = "<group>"; };
 		07A6472C18D0E4DF009AD841 /* IDScrollableTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDScrollableTabBar.m; sourceTree = "<group>"; };
 		07A6472D18D0E4DF009AD841 /* IDScrollableTabBarDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDScrollableTabBarDelegate.h; sourceTree = "<group>"; };
@@ -173,6 +178,7 @@
 				072FE37418BE88F7006639D5 /* Main.storyboard */,
 				07FFDADD18BFF212006F7628 /* CalendarView.xib */,
 				07FFDADF18BFF893006F7628 /* SocialView.xib */,
+				0793C3CB19059F6600C86F4A /* CalendarCell.xib */,
 				07FFDAE118BFF8DF006F7628 /* ClassesView.xib */,
 				07FFDAE318BFF90C006F7628 /* DirectionsView.xib */,
 				0744821A18D7F45400D6D745 /* twitterCell.xib */,
@@ -180,6 +186,8 @@
 				072FE37818BE88F7006639D5 /* ViewController.m */,
 				0744821C18D7F49300D6D745 /* twitterAndFaceBookCell.h */,
 				0744821D18D7F49300D6D745 /* twitterAndFaceBookCell.m */,
+				0793C3CD19059F9800C86F4A /* CalendarCell.h */,
+				0793C3CE19059F9800C86F4A /* CalendarCell.m */,
 				072FE37A18BE88F7006639D5 /* Images.xcassets */,
 				072FE36918BE88F7006639D5 /* Supporting Files */,
 			);
@@ -330,6 +338,7 @@
 				07A6474018D0E73D009AD841 /* defaultArch@2x.png in Resources */,
 				07FFDAE418BFF90C006F7628 /* DirectionsView.xib in Resources */,
 				07A6474218D0E73D009AD841 /* defaultBackground@2x.png in Resources */,
+				0793C3CC19059F6600C86F4A /* CalendarCell.xib in Resources */,
 				07A6474118D0E73D009AD841 /* defaultBackground.png in Resources */,
 				072FE36D18BE88F7006639D5 /* InfoPlist.strings in Resources */,
 				07A6474318D0E73D009AD841 /* defaultCenter.png in Resources */,
@@ -397,6 +406,7 @@
 			files = (
 				072FE37918BE88F7006639D5 /* ViewController.m in Sources */,
 				072FE37318BE88F7006639D5 /* AppDelegate.m in Sources */,
+				0793C3CF19059F9800C86F4A /* CalendarCell.m in Sources */,
 				072FE36F18BE88F7006639D5 /* main.m in Sources */,
 				07A6473018D0E4DF009AD841 /* IDScrollableTabBar.m in Sources */,
 				07A6473118D0E4DF009AD841 /* IDScrollableTabBarItem.m in Sources */,
