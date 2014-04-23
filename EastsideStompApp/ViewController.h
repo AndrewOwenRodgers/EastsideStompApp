@@ -21,5 +21,6 @@
 @property (strong, nonatomic) UIView *socialView;
 @property (strong, nonatomic) UIView *classesView;
 @property (strong, nonatomic) UIView *directionsView;
+@property (weak, nonatomic) UITableView *calendarTable;
 
 @end
