@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarCell">
             <connections>
+                <outlet property="backgroundView" destination="Kpt-zN-nPc" id="4Bk-BU-PBD"/>
                 <outlet property="eventDate" destination="cRY-jV-v9f" id="ZId-Ts-yx7"/>
                 <outlet property="eventTitle" destination="Zv0-f8-DDx" id="75n-wF-ect"/>
             </connections>
